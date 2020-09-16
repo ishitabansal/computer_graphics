@@ -27,3 +27,16 @@ if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
     glFlush();
 }
 }
+
+int main( int argc, char** argv ) 
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE);
+    glutInitWindowSize(500,500);
+    glutInitWindowPosition(100,100);
+    glutCreateWindow("My Triangle");
+    glutDisplayFunc(display);
+    glutMouseFunc(mouse);
+    glutMainLoop();
+    return 0;
+}
