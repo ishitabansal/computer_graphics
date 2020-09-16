@@ -61,3 +61,16 @@ void mouse(int button,int state,int x,int y){
     }
     glutPostRedisplay();
 }
+
+int main(int argc,char **argv)
+{
+ glutInit(&argc,argv);
+ glutInitDisplayMode(GLUT_RGB);
+ glutInitWindowSize(500,500);
+ glutInitWindowPosition(800,100);
+ glutCreateWindow("ishita bansal");
+ init();
+ glutDisplayFunc(display);
+ glutMouseFunc(mouse);
+ glutMainLoop();
+}
