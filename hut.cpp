@@ -21,3 +21,43 @@ void display()
  glLineWidth(5);
  glColor3f(t,u,7.0);
  glBegin(GL_LINES);
+
+    glVertex2f(20,20);
+    glVertex2f(60,20);
+    glVertex2f(60,60);
+    glVertex2f(20,60);
+    glVertex2f(20,60);
+    glVertex2f(20,20);
+    glVertex2f(60,20);
+
+    glVertex2f(60,60);
+    glVertex2f(60,60);
+    glVertex2f(40,80);
+    glVertex2f(40,80);
+    glVertex2f(20,60);
+
+    
+    
+    glEnd();
+
+
+  glFlush();
+}
+
+
+void mouse(int button,int state,int x,int y){
+
+    if(button==GLUT_RIGHT_BUTTON){
+        t=1;
+        u=0;
+    }
+    else if(button==GLUT_LEFT_BUTTON){
+        t=0;
+        u=1;
+    }
+
+    else{
+
+    }
+    glutPostRedisplay();
+}
