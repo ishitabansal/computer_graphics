@@ -31,3 +31,41 @@ void flood_it(int x, int y, float* fillColor, float* ic){
         flood_it(x,y-2,fillColor,ic);
     }
 }
+
+void mouse(int btn, int state, int x, int y){
+    y = 480-y;
+    if(btn==GLUT_LEFT_BUTTON)
+    {
+        if(state==GLUT_DOWN)
+        {
+            float intCol[] = {1,0,0};
+            float color[] = {0,0,1};
+            glReadPixels(x,y,1.0,1.0,GL_RGB,GL_FLOAT,intCol);
+            flood_it(x,y,color,intCol);
+        }
+    }
+}
+
+void world(){
+    glPointSize(2);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1,0,1);
+    glBegin(GL_POLYGON);
+        glVertex2i(15,10);
+        glVertex2i(155,200);
+        glVertex2i(305,10);
+    glEnd();
+    glColor3f(0,1,0);
+    glBegin(GL_POLYGON);
+        glVertex2i(300,398);
+        glVertex2i(150,198);
+        glVertex2i(450,198);
+    glEnd();
+    glColor3f(0,0,1);
+    glBegin(GL_POLYGON);
+        glVertex2i(300,10);
+        glVertex2i(600,10);
+        glVertex2i(450,200);
+    glEnd();
+    glFlush();
+}
