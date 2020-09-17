@@ -32,3 +32,30 @@ void bound_it(int x, int y, float* fillColor, float* bc){
         bound_it(x,y-2,fillColor,bc);
     }
 }
+
+void mouse(int btn, int state, int x, int y){
+    y = 480-y;
+    if(btn==GLUT_LEFT_BUTTON)
+    {
+        if(state==GLUT_DOWN)
+        {
+            float bCol[] = {1,0,0};
+            float color[] = {0,0,1};
+            //glReadPixels(x,y,1.0,1.0,GL_RGB,GL_FLOAT,intCol);
+            bound_it(x,y,color,bCol);
+        }
+    }
+}
+
+void world(){
+    glLineWidth(3);
+    glPointSize(2);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1,0,0);
+    glBegin(GL_LINE_LOOP);
+        glVertex2i(150,100);
+        glVertex2i(300,300);
+        glVertex2i(450,100);
+    glEnd();
+    glFlush();
+}
