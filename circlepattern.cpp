@@ -184,3 +184,50 @@ void display()
             glVertex2f(-y,-x);
             x=x+2;
         }
+ glEnd();
+
+        glBegin(GL_LINES);
+        glColor3f(1.0,1.0,1.0);
+        for(int i=0;i<360;i++)
+            {
+             float theta1= (i+0.5)*3.142/180;
+             float theta2= (i-0.5)*3.142/180;
+             glVertex2f(60*cos(theta1),60*sin(theta1));
+             glVertex2f(60*cos(theta2),60*sin(theta2));
+        }
+        glEnd();
+
+
+
+
+
+        glBegin(GL_POLYGON);
+        glColor3f(0.0,0.0,0.0);
+        for(int i=0;i<360;i++)
+        {
+            float theta1= (i+0.5)*3.142/180;
+            glVertex2f(50*cos(theta1),50*sin(theta1));
+        }
+        glEnd();
+
+
+        glBegin(GL_LINES);
+        glColor3f(0.0,0.9,0.3);
+        rad = 50;
+        x=0.0f;y=0.0f;
+        while(x<=rad)
+        {
+            y= sqrt((rad*rad - x*x));
+            /*
+            glVertex2f(x,y);
+            glVertex2f(x,-y);
+            glVertex2f(-x,y);
+            glVertex2f(-x,-y);
+            */
+            glVertex2f(y,x);
+            glVertex2f(-y,x);
+            glVertex2f(y,-x);
+            glVertex2f(-y,-x);
+            x=x+2;
+        }
+        glEnd();
