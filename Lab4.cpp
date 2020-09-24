@@ -67,4 +67,19 @@ void displayMe(void)
     line_join(0.0, -0.250, 0.216, 0.125);
     line_join(0.0, -0.250, -0.216, 0.125);
     line_join(0.216, 0.125, -0.216, 0.125); */
+     glColor3f(1.0,0.0,1.0);
+    cirlce();
     
+}
+
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGB);
+    glutInitWindowSize(700,700);
+    glutCreateWindow("ishita");
+    glutDisplayFunc(displayMe);
+    glutMainLoop();
+    return 0;
+}
