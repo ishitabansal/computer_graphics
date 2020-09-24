@@ -35,3 +35,38 @@ void display()
         glBegin(GL_LINES);
         glColor3f(1.0,1.0,0.0);
         for(int i=0;i<360;i++)
+ {
+             float theta1= (i+0.5)*3.142/180;
+             float theta2= (i-0.5)*3.142/180;
+             glVertex2f(90*cos(theta1),90*sin(theta1));
+             glVertex2f(90*cos(theta2),90*sin(theta2));
+        }
+        glEnd();
+
+        float rad, x ,y;
+
+
+
+        glBegin(GL_LINES);
+        glColor3f(0.0,0.0,1.0);
+        rad = 90;
+        x=0.0f;y=0.0f;
+        while(x<=rad)
+        {
+            y= sqrt((rad*rad - x*x));
+            glVertex2f(x,y);
+            glVertex2f(x,-y);
+            glVertex2f(-x,y);
+            glVertex2f(-x,-y);
+            glVertex2f(y,x);
+            glVertex2f(-y,x);
+            glVertex2f(y,-x);
+            glVertex2f(-y,-x);
+            x=x+2;
+        }
+        glEnd();
+
+
+        glBegin(GL_POLYGON);
+        glColor3f(0.0,1.0,1.0);
+        for(int i=0;i<360;i++)
