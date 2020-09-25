@@ -61,3 +61,38 @@ void display()
      }
      glEnd();
 
+
+     glBegin(GL_LINES);
+     glColor3f(0.4,0.9,0.1);
+
+     for(int i=-10;i<11; i=i+2)
+     {
+         glVertex2f(i,50);
+         glVertex2f(i,-90);
+     }
+
+     for(int i=50;i>-90;i=i-2)
+     {
+         glVertex2f(-10,i);
+         glVertex2f(10,i);
+     }
+     glEnd();
+
+
+
+
+     glBegin(GL_LINES);
+     glColor3f(0.8,1.0,1.0);
+
+     for(int i=20;i<41; i=i+2)
+     {
+         glVertex2f(i,80);
+         glVertex2f(i,-90);
+     }
+
+     for(int i=80;i>-90;i=i-2)
+     {
+         glVertex2f(20,i);
+         glVertex2f(40,i);
+     }
+     glEnd();
