@@ -96,3 +96,27 @@ void display()
          glVertex2f(40,i);
      }
      glEnd();
+
+
+
+     glBegin(GL_LINES);
+     glColor3f(1.0,0.8,1.0);
+
+     for(int i=50;i<71; i=i+2)
+     {
+         glVertex2f(i,30);
+         glVertex2f(i,-90);
+     }
+
+     for(int i=30;i>-90;i=i-2)
+     {
+         glVertex2f(50,i);
+         glVertex2f(70,i);
+     }
+     glEnd();
+
+
+
+
+  glFlush();
+}
