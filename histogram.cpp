@@ -120,3 +120,18 @@ void display()
 
   glFlush();
 }
+
+
+
+
+int main(int argc,char **argv)
+{
+ glutInit(&argc,argv);
+ glutInitDisplayMode(GLUT_RGB);
+ glutInitWindowSize(700,700);
+ glutInitWindowPosition(800,100);
+ glutCreateWindow("Ishita");
+ init();
+ glutDisplayFunc(display);
+ glutMainLoop();
+}
