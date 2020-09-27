@@ -62,3 +62,40 @@ void reflect(int choice2)
 		X3 = -x3;
 		Y3 = -y3;
 	}
+}
+void myInit (void)
+{ 
+	glMatrixMode(GL_PROJECTION); 
+	glLoadIdentity(); 
+	
+	gluOrtho2D(-25, 25, -25, 25); 
+} 
+
+void display (void)
+{ 
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0,1.0,0.0);
+	
+	if(choice==1)
+	{
+		translate(tx,ty);
+	}
+	
+	else if(choice==2)
+	{
+		rotate(theta);
+	}
+	
+	else
+	{
+		reflect(choice2);
+	}
+	
+	glBegin(GL_TRIANGLES);
+		glVertex2f(X,Y);
+		glVertex2f(X2,Y2);
+		glVertex2f(X3,Y3);
+	glEnd();
+		
+	glFlush(); 
+} 
