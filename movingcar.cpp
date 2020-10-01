@@ -69,3 +69,19 @@ void display()
 	car(4);
 	glFlush();
 }
+
+int main(int argc, char** argv)
+{ 
+	glutInit(&argc, argv); 
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); 
+	
+	
+	glutInitWindowSize(700, 700); 
+	glutInitWindowPosition(50,50); 
+	
+	
+	glutCreateWindow("Moving Car"); 
+	init(); 
+	glutDisplayFunc(display); 
+	glutMainLoop(); 
+}
