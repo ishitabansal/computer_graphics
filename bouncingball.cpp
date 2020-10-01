@@ -107,3 +107,18 @@ glutSwapBuffers();
 void idle(void){
 /* do nothing */
 }
+
+int main(int argc, char **argv){
+glutInit(&argc,argv);
+glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+glutInitWindowPosition(0,0);
+glutInitWindowSize(WIDTH,HEIGHT);
+glutCreateWindow(argv[0]);
+init();
+glutIdleFunc(idle);
+glutReshapeFunc(reshape);
+glutDisplayFunc(display);
+glutTimerFunc(0,Timer,0);
+glutMainLoop();
+return(1);
+}
