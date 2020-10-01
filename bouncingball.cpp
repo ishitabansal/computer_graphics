@@ -32,3 +32,40 @@ glutPostRedisplay();
 glutTimerFunc(30,Timer,0);
 }
  
+int k=20;
+void circle(int p,int m)
+{
+int x=0,y,d,r;
+r=m;
+y=r;
+d=3-2*r;
+while(x<=y)
+{
+glVertex2i(x,y+p);
+glVertex2i(y,x+p);
+glVertex2i(-x,y+p);
+glVertex2i(-y,x+p);
+glVertex2i(-x,-y+p);
+glVertex2i(-y,-x+p);
+glVertex2i(y,-x+p);
+glVertex2i(x,-y+p);
+if(d<0)
+d=d+4*x+6;
+else
+{
+d=d+4*(x-y)+10;
+y--;
+}
+x++;
+}
+}
+ 
+int r=100,flag=0;
+ 
+void display(void)
+{
+ 
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glColor4f(1.0,0.0,0.0,1.0);
+glBegin(GL_POINTS);
+ 
