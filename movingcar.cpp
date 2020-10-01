@@ -36,3 +36,36 @@ void car(int z) //z is the no of time the function is called
 		glVertex2f(-25+25*(z-1),5);
 		glVertex2f(-25+25*(z-1),10);
 		glVertex2f(-50+25*(z-1),10);
+		glVertex2f(-25+25*(z-1),10);
+	glEnd();
+}
+
+void display()
+{       glColor3f(0.0,0.0,1.0); //car color
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	//first car
+	car(1);
+	glFlush();
+	
+	sleep(2);
+	
+	//second car
+	glClear(GL_COLOR_BUFFER_BIT);
+	car(2);
+	glFlush();
+	
+	sleep(2);
+	
+	//third car
+	glClear(GL_COLOR_BUFFER_BIT);
+	car(3);
+	glFlush();
+	
+	sleep(2);
+	
+	//fourth car
+	glClear(GL_COLOR_BUFFER_BIT);
+	car(4);
+	glFlush();
+}
