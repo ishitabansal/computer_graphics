@@ -68,4 +68,42 @@ void display(void)
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 glColor4f(1.0,0.0,0.0,1.0);
 glBegin(GL_POINTS);
+  
+circle(k,r);
  
+ 
+if(flag==0)
+{
+if((k+r)<=240)
+{
+k=k+10;
+ 
+}
+ 
+if((k+r)>=240){
+flag=1;
+ 
+}
+}
+ 
+if(flag==1)
+{
+k=k-10;
+ 
+ 
+if((k-r)<=-240)
+{
+flag=0;
+if(r!=10)
+r=r-10;
+}
+}
+ 
+glEnd();
+glutSwapBuffers();
+ 
+}
+ 
+void idle(void){
+/* do nothing */
+}
