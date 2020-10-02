@@ -94,3 +94,22 @@ void display(void) {
 	hDegree -= 0.0002733333;
 
 }
+
+void Timer(int value) {
+	glutTimerFunc(33, Timer, 0);
+	glutPostRedisplay();
+}
+
+int main(int argc, char **argv) {
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+	glutInitWindowPosition(200, 200);
+	glutInitWindowSize(700, 700);
+	glutCreateWindow("clock");
+	glutDisplayFunc(display);
+	init();
+	Timer(0);
+	glutMainLoop();
+
+	return 0;
+}
