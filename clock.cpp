@@ -62,3 +62,35 @@ double mDegree = 0;
 double sDegree = 0;
 
 void display(void) {
+// Terminal Points for Needle
+	Point pHour, pMinute, pSecond;
+
+	pHour.y = pC.y + (hRadius * sin(hDegree));
+	pHour.x = pC.x + (hRadius * cos(hDegree));
+
+	pMinute.y = pC.y + (mRadius * sin(mDegree));
+	pMinute.x = pC.x + (mRadius * cos(mDegree));
+
+	pSecond.y = pC.y + (sRadius * sin(sDegree));
+	pSecond.x = pC.x + (sRadius * cos(sDegree));
+
+	glClear(GL_COLOR_BUFFER_BIT);
+	glBegin(GL_POINTS);
+	glColor3f(1.0, 1.0, 1.0);
+	draw_circle(pC, radius);
+	glColor3f(0.0, 1.0, 1.0);
+	draw_dda(pC, pHour);
+
+	glColor3f(0.0, 1.0, 0.0);
+	draw_dda(pC, pMinute);
+
+	glColor3f(1.0, 0.0, 1.0);
+	draw_dda(pC, pSecond);
+	glEnd();
+	glFlush();
+
+	mDegree -= 0.001333333;
+	sDegree -= 0.08;
+	hDegree -= 0.0002733333;
+
+}
